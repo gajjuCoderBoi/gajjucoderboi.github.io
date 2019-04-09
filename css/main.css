@@ -112,10 +112,11 @@ body {
     margin-left: -10px;
     padding: 0;
 }
-.bar3{
+
+.bar3 {
     margin-top: 15px;
     width: 100vw;
-    height: 280px;
+    height: 300px;
     position: center;
     background: url("../downarrow.svg");
     background-position: center;
@@ -123,18 +124,25 @@ body {
     background-size: cover;
     background-color: white;
 }
-.bar3 div{
+
+.bar3 div {
     margin-top: 70px;
     color: white;
 }
-.bar3 div h1{
+
+.bar3 div h1 {
     font-size: 50px;
     letter-spacing: 1px;
 }
-.bar3 div h3{
+
+.bar3 div h3 {
     letter-spacing: 1px;
 }
-.page{
+
+.page {
+    width: 100vw;
+    padding: 10px;
+    height: 100vw;
     background-color: white;
 }
 

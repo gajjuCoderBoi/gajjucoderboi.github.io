@@ -1,0 +1,34 @@
+.loader{
+    background: #eaeaea;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.loader-inner {
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    text-align:center;
+}
+
+
+
+.headerimage {
+    background: linear-gradient( to left,rgba(0,0,0, 0.6), rgba(0,0,0, 0.8)), url("header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+
+.logo h1{
+    padding: 10px;
+    color: white;
+    font-family: Nanami, sans-serif;
+}
