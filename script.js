@@ -7,9 +7,24 @@ $(".loader").delay(2000).fadeOut("slow");
 $(document).ready(function() {
 
     initTyped();
+    initEasyChart();
+
+    $(".headerimage").height($(window).height());
+    $(window).resize(function(){
+        $(".headerimage").height($(window).height());
+    });
 
 });
 
+function initEasyChart() {
+    $('.chart').easyPieChart({
+        easing: 'easeOutBounce',
+        barColor: '#000',
+        onStep: function(from, to, percent) {
+            $(this.el).find('.percent').text(Math.round(percent));
+        }
+    });
+}
 
 
 
