@@ -14,7 +14,7 @@ $(".loader").delay(2000).fadeOut("slow");
     $('#nav').onePageNav({
         currentClass: 'active',
         changeHash: true,
-        scrollSpeed: 750
+        scrollSpeed: 750,
     });
 
 })();
