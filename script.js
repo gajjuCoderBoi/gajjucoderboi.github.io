@@ -2,8 +2,36 @@
 
 $(".loader").delay(2000).fadeOut("slow");
 
+(function () {
+    initTyped();
+    initEasyChart();
+
+    $(".headerimage").height($(window).height());
+    $(window).resize(function(){
+        $(".headerimage").height($(window).height());
+    });
+
+    $('#nav').onePageNav({
+        currentClass: 'active',
+        changeHash: true,
+        scrollSpeed: 750
+    });
+
+})();
 
 
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 100) {
+        $('nav').addClass('mynavbar');
+    }
+    else {
+        $('nav').removeClass('mynavbar');
+    }
+});
+
+
+
+/*
 $(document).ready(function() {
 
     initTyped();
@@ -15,6 +43,7 @@ $(document).ready(function() {
     });
 
 });
+*/
 
 function initEasyChart() {
     $('.chart').easyPieChart({

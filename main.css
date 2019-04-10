@@ -20,6 +20,11 @@
 body{
     overflow-x: hidden;
 }
+.mynavbar{
+    background: white;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 5px 0 rgba(0,0,0,0.06), 0 1px 10px 0 rgba(0,0,0,0.08);
+}
+
 
 .headerimage {
     background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("img/header.jpg");
@@ -109,6 +114,19 @@ body{
     text-decoration: none;
     color: white;
 }
+
+.mynavbar .nav-item a{
+    color: black;
+}
+.mynavbar .active > a{
+    color: white;
+}
+.mynavbar .nav-item a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
 
 .header_text h2 {
     font-weight: bold;
