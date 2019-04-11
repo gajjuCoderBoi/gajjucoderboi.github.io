@@ -2,9 +2,10 @@
 
 $(".loader").delay(2000).fadeOut("slow");
 
-(function () {
+$(document).ready((function () {
     initTyped();
     initEasyChart();
+    initContactForm();
 
     $(".headerimage").height($(window).height());
     $(window).resize(function(){
@@ -17,8 +18,24 @@ $(".loader").delay(2000).fadeOut("slow");
         scrollSpeed: 750,
     });
 
-})();
+}));
 
+function initContactForm() {
+
+    var contact_form = document.getElementById('contact_form');
+    contact_form.onsubmit = function (event) {
+        event.preventDefault();
+
+        var formData = new FormData(document.getElementById('contact_form'));
+        var arr = [];
+
+        for (let v of formData.entries()) {
+            arr.push(v)
+        }
+        alert("Thank You! I'll be in touch");
+        console.log(arr)
+    }
+}
 
 $(window).scroll(function(){
     if ($(window).scrollTop() >= 100) {
@@ -30,21 +47,6 @@ $(window).scroll(function(){
 });
 
 
-
-/*
-$(document).ready(function() {
-
-    initTyped();
-    initEasyChart();
-
-    $(".headerimage").height($(window).height());
-    $(window).resize(function(){
-        $(".headerimage").height($(window).height());
-    });
-
-});
-*/
-
 function initEasyChart() {
     $('.chart').easyPieChart({
         easing: 'easeOutBounce',
@@ -54,12 +56,6 @@ function initEasyChart() {
         }
     });
 }
-
-
-
-
-
-
 
 
 
