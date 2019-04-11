@@ -63,7 +63,7 @@ function initEasyChart() {
 //Typed Animation
 function initTyped() {
     $("#typed").typed({
-        strings: ["A Student.", "A Freelancer.", "A Developer.", "Single Too."],
+        strings: ["A Student.", "A Learner.","A Freelancer.", "A Developer.", "Single Too."],
         // typing speed
         typeSpeed: 300,
         // time before typing starts
