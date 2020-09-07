@@ -47,7 +47,7 @@ pipeline {
         stage('Create and Run new Container. '){
             agent any
             steps{
-                sh "docker run -d --name ${dockerContainerName} -p ${exposePortNum}:80 ${dockerImageRpi}"
+                sh "docker run -d --name ${dockerContainerName} -p ${exposePortNum}:80 ${registry}:arm64"
             }
         }
     }
