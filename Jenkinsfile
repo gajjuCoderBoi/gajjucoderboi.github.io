@@ -8,8 +8,8 @@ pipeline {
                 registryCredential = 'dockerhub_id'
                 dockerImage = ''
                 dockerImageRpi = ''
-                dockerfile = 'Dockerfile.rpi'
-                rpiDockerFile = 'Dockerfile.rpi.rpi'
+                dockerfile = 'Dockerfile'
+                rpiDockerFile = 'Dockerfile.rpi'
             }
 
             stages {
