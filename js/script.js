@@ -1,8 +1,9 @@
 // Loader
 
-$(".loader").delay(2000).fadeOut("slow");
+
 
 $(document).ready((function () {
+    $(".loader").delay(1000).fadeOut("slow");
     initTyped();
     initEasyChart();
     initContactForm();
@@ -65,7 +66,7 @@ function initTyped() {
     $("#typed").typed({
         strings: ["A Student.",  "A Developer.", "A Learner.","A Freelancer."],
         // typing speed
-        typeSpeed: 300,
+        typeSpeed: 50,
         // time before typing starts
         startDelay: 100,
         // backspacing speed
