@@ -1,17 +1,18 @@
 pipeline {
     agent none
+    environment {
+        registry = "ghazanfar9131/resume"
+        registryCredential = 'dockerhub_id'
+        dockerImage = ''
+        dockerImageRpi = ''
+        dockerfile = 'Dockerfile'
+        rpiDockerFile = 'Dockerfile.rpi'
+        dockerContainerName = 'resume'
+        exposePortNum = '80'
+    }
 
     stages {
         stage('Building Docker Image. ') {
-            environment {
-                registry = "ghazanfar9131/resume"
-                registryCredential = 'dockerhub_id'
-                dockerImage = ''
-                dockerImageRpi = ''
-                dockerfile = 'Dockerfile'
-                rpiDockerFile = 'Dockerfile.rpi'
-            }
-
             stages {
                 stage("arm64") {
                     agent any
@@ -29,6 +30,24 @@ pipeline {
                         }
                     }
                 }
+            }
+        }
+        stage('Stop Existing Docker Container. '){
+            agent any
+            steps{
+                sh "docker kill ${dockerContainerName}"
+            }
+        }
+        stage('Removing Existing Docker Container.'){
+            agent any
+            steps{
+                sh "docker rm -f ${dockerContainerName}"
+            }
+        }
+        stage('Create and Run new Container. '){
+            agent any
+            steps{
+                sh "docker run -d --name ${dockerContainerName} -p ${exposePortNum}:80 ${dockerImageRpi}"
             }
         }
     }
