@@ -35,13 +35,13 @@ pipeline {
         stage('Stop Existing Docker Container. '){
             agent any
             steps{
-                sh "docker kill ${dockerContainerName}"
+                sh "docker stop ${dockerContainerName} || true"
             }
         }
         stage('Removing Existing Docker Container.'){
             agent any
             steps{
-                sh "docker rm -f ${dockerContainerName}"
+                sh "docker rm -f ${dockerContainerName} || true"
             }
         }
         stage('Create and Run new Container. '){
